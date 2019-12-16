@@ -7,8 +7,5 @@ COPY . /app/
 RUN sh gradlew build
 # ENV JAVA_OPTS=""
 # ENTRYPOINTなどの実行するものはENVが適切
-# ARG JAVA_OPTS
-# ENTRYPOINT [ "java", "-jar", "build/libs/JvmStudent-1.0-SNAPSHOT.jar", "${JAVA_OPTS}" ]
-ENTRYPOINT [ "sh", "-c", "java ${JAVA_OPS} -jar build/libs/JvmStudent-1.0-SNAPSHOT.jar" ]
-# ENTRYPOINT [ "java", "-jar", "build/libs/JvmStudent-1.0-SNAPSHOT.jar" ]
-
+# ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -jar build/libs/JvmStudent-1.0-SNAPSHOT.jar" ]
+ENTRYPOINT [ "sh", "-c", "echo $JAVA_OPTS && java $JAVA_OPTS -jar build/libs/JvmStudent-1.0-SNAPSHOT.jar" ]

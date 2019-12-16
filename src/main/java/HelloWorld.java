@@ -6,7 +6,7 @@ public class HelloWorld {
             LocalDateTime now = LocalDateTime.now();
             System.out.println(now);
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {}
         }
     }
