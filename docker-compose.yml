@@ -5,11 +5,12 @@ services:
     # build: .
     image: jvm-student
     environment:
-      JAVA_OPTS: "-XX:+UseSerialGC"
+      JAVA_OPTS: "-XX:+UseSerialGC -XX:StartFlightRecording=delay=1s,duration=10s,filename=/var/log/JvmRecord.jfr,settings=profile"
+      # JAVA_OPTS: "-XX:+UseSerialGC -XX:StartFlightRecording=delay=1s,duration=10s,filename=/var/log/myRecording.jfr,settings=profile,name=SampleRecording"
       # JAVA_OPTS: "-XX:+UseConcMarkSweepGC -Xmx:512m"
       # - JAVA_OPTS=-XX:+UseConcMarkSweepGC
     volumes:
-      #
+      - ./JvmRecord.jfr:/var/log/JvmRecord.jfr
     deploy:
       resources:
         limits:

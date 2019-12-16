@@ -38,3 +38,4 @@ jstat -gccause  (プロセスID)
 ## MEMO
 ### Flight Recorder
 https://qiita.com/masanori0001/items/95bfa0898447d8d4774e
+// コンテナを終了すると自動で格納される
