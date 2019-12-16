@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  ap:
+    # build: .
+    image: jvm-student
+    environment:
+      JAVA_OPTS: "-XX:+UseSerialGC"
+      # JAVA_OPTS: "-XX:+UseConcMarkSweepGC -Xmx:512m"
+      # - JAVA_OPTS=-XX:+UseConcMarkSweepGC
+    volumes:
+      #
+    deploy:
+      resources:
+        limits:
+          cpus: '0'
+          memory: 1g
