@@ -2,3 +2,4 @@
 build/
 
 JvmRecord.jfr
+logs/
