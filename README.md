@@ -16,7 +16,7 @@ docker run -d --env JAVA_OPTS="-XX:+UseConcMarkSweepGC" jvm-student
  * UseSerialGC
  * UseParallelGC
  * UseG1GC
- * UseConcMarkSweepGC // どうしよう
+ * UseConcMarkSweepGC // CMSのことか
 
 ### docker実行2
 docker-compose up
