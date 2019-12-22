@@ -39,3 +39,6 @@ jstat -gccause  (プロセスID)
 ### Flight Recorder
 https://qiita.com/masanori0001/items/95bfa0898447d8d4774e
 // コンテナを終了すると自動で格納される
+
+### 結果を編集
+cat jstat.log | awk '{print $5","$6","$7","$8}'  

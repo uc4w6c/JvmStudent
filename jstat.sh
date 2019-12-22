@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "  S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT    CGC    CGCT     GCT    LGCC                 GCC     " > /app/logs/jstat.log
-sleep 5s
+echo " S0C    S1C    S0U    S1U      EC       EU        OC         OU       MC     MU    CCSC   CCSU   YGC     YGCT    FGC    FGCT    CGC    CGCT     GCT     " > /app/logs/jstat.log
+sleep 1s
 while :
 do
     PROCESS_ID=$( jps | grep jar | awk '{print $1}' )
@@ -10,7 +10,6 @@ do
       exit 0
     fi
     # jps | grep jar | awk '{print $1}' | xargs -I{} jstat -gccause {} | tail -1 >> /app/logs/jstat.log
-    jstat -gccause ${PROCESS_ID} | tail -1 >> /app/logs/jstat.log
-    sleep 5s
+    jstat -gc ${PROCESS_ID} | tail -1 >> /app/logs/jstat.log
+    sleep 1s
 done
-

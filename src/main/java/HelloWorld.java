@@ -20,8 +20,9 @@ public class HelloWorld extends Thread {
         List objList = new ArrayList<Object>();
         long i = 0;
         while (true) {
+            Object obj = new Object();
             if (i++ % 1000 == 0)
-                objList.add(new Object());
+                objList.add(obj);
         }
     }
 }
